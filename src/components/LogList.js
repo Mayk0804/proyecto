@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import PersonaDataService from "../services/PersonaService";
+import LogDataService from "../services/LogService";
 import { Link } from "react-router-dom";
-const PersonaList = () => {
- const [personas, setPersonas] = useState([]);
- const [currentPersona, setCurrentPersona] = useState(null);
+const LogList = () => {
+ const [log, setLog] = useState([]);
+ const [currentLog, setCurrentLog] = useState(null);
  const [currentIndex, setCurrentIndex] = useState(-1);
  
  useEffect(() => {
@@ -35,7 +35,7 @@ const PersonaList = () => {
  <div className="list row">
  
  <div className="col-md-6">
- <h4>Lista de Personas</h4>
+ <h4>Lista de Logs</h4>
  <ul className="list-group">
  {personas &&
  personas.map((persona, index) => (
@@ -50,9 +50,10 @@ const PersonaList = () => {
  </li>
  ))}
  </ul>
- 
  </div>
- <div className="col-md-6">
+ 
+ 
+ {/* <div className="col-md-6">
  {currentPersona ? (
  <div>
  <h4>Persona</h4>
@@ -87,10 +88,10 @@ const PersonaList = () => {
  <p>Escoja una persona...</p>
  </div>
  )}
- </div>
+ </div> */}
  </div>
  
  );
  
 };
-export default PersonaList;
+export default LogList;
